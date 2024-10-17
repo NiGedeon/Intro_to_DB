@@ -13,6 +13,9 @@ def database_name(dbname):
 		if connection.isconnected():
 			cursor = connection.cursor()
 			cursor.execute("DESC Books;")
+			sho = cursor.fetchall()
+			for row in show:
+				print row
 			cursor.close()
 			connection.close()
 
