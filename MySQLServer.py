@@ -11,8 +11,8 @@ def create_database(hostname,user,password):
 
 		if connection.isconnected():
 			cursor = connection.cursor()
-			val = f"CREATE DATABASE  IF NOT EXISTS alx_book_store; "
-			cursor.execute(val)
+		
+			cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
 			print(f"Database alx_book_store is created successfully or already exists!")
 			cursor.close()
 			connection.close()
