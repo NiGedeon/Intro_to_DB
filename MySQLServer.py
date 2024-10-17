@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import error
 
 def create_database(hostname,user,password):
 	try:
@@ -17,7 +16,7 @@ def create_database(hostname,user,password):
 			cursor.close()
 			connection.close()
 
-	except error as e:
+	except mysql.connector.Error as e:
 		print(f"Error:{e}")
 
 create_database("localhost","root","123wed")
