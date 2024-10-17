@@ -11,7 +11,7 @@ def database_name(dbname):
 
 		if connection.isconnected():
 			cursor = connection.cursor()
-			cursor.execute("show tables;")
+			cursor.execute("SHOW TABLES;")
 			cursor.close()
 			connection.close()
 
