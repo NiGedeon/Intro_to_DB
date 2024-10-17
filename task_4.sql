@@ -12,11 +12,8 @@ def database_name(dbname):
 
 		if connection.isconnected():
 			cursor = connection.cursor()
-			cursor.execute("DESC Books;")
-			cursor.execute("Select * from Books;")
-			sho = cursor.fetchall()
-			for row in show:
-				print row
+			cursor.execute("DESC Books")
+			cursor.execute("SELECT DATA_TYPE, COLUMN_NAME,COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME ='Books' AND TABLE_SCHEMA = 'alx_book_store'")
 			cursor.close()
 			connection.close()
 
