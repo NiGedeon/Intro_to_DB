@@ -13,6 +13,7 @@ def database_name(dbname):
 		if connection.isconnected():
 			cursor = connection.cursor()
 			cursor.execute("DESC Books;")
+			cursor.execute("Select * from Books;")
 			sho = cursor.fetchall()
 			for row in show:
 				print row
