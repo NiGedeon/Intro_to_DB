@@ -10,6 +10,7 @@ def database_name(dbname):
 		)
 
 		if connection.isconnected():
+			USE alx_book_store;
 			cursor = connection.cursor()
 			cursor.execute("SHOW TABLES;")
 			cursor.close()
