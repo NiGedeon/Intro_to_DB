@@ -7,23 +7,25 @@ connection = mysql.connector.connect(
 ) 
 cursor = connection.cursor() 
 sql = "INSERT INTO customers (customer_id,customer_name,email,address) VALUES(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)" 
-val =[(
+val1 =(
     2,
     "Blessing Malik",
     "bmalik@sandtech.com",
     "124 Happiness Ave."
-),(
+)
+val2 =(
     3,
     "Obed Ehoneah",
     "eobed@sandtech.com",
     "125 Happiness Ave."
-),(
+)
+val3 =(
     4,
     "Nehemial Kamolu",
     "nkamolu@sandtech.com",
     "126 Happiness Ave."
-)]
-cursor.execute(sql, val) 
+)
+cursor.execute(sql, val1,val2,val3) 
 cursor.commit() 
 print(mycursor.rowcount, "record(s) inserted.") 
 cursor.close() 
